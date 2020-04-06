@@ -1,12 +1,12 @@
 //business logic 
 function PlacesLog() {
-  this.locations = []
+  this.array = []
   this.currentId = 0
 }
 
 PlacesLog.prototype.addLocation = function(place) {
   location.id = this.assignId();
-  this.locations.push(place);
+  this.array.push(place);
 }
 
 PlacesLog.prototype.assignId = function() {
@@ -15,10 +15,10 @@ PlacesLog.prototype.assignId = function() {
 }
 
 PlacesLog.prototype.findPlace = function(id) {
-  for (var i=0; i< this.locations.length; i++) {
-    if (this.locations[i]) {
-      if (this.locations[i].id === id) {
-        return this.locations[i];
+  for (var i=0; i< this.array.length; i++) {
+    if (this.array[i]) {
+      if (this.array[i].id === id) {
+        return this.array[i];
       }
     }
   };
@@ -26,12 +26,11 @@ PlacesLog.prototype.findPlace = function(id) {
 }
 
 PlacesLog.prototype.deletePlace = function(id) {
-  for (var i=0; i< this.locations.length; i++) {
-    if (this.locations[i]) {
-      if (this.locations[i].id == id) {
-        delete this.locations[i];
+  for (var i=0; i< this.array.length; i++) {
+    if (this.array[i]) {
+      if (this.array[i].id == id) {
+        delete this.array[i];
         return true;
-        console.log(PlacesLog)
       }
     }
   };
@@ -47,7 +46,16 @@ function Places(location, landmarks, timeOfYear, notes) {
 
 
 //UI logic 
-var placesLog = new PlacesLog();
+var travelLog = new PlacesLog();
+
+function displayLocationDetails(travelLogToDisplay) {
+  var arrayList = $("ul#places");
+  var htmlForPlaceInfo = "";
+  travelLogToDisplay.array.forEach(function(Places) {
+  htmlForPlaceInfo += "<li id=" + Places.id + ">" + Places.location + " " + Places.landmarks + " " + Places.timeOfYear + " " + Places.notes + "</li>";
+  });
+  arrayList.html(htmlForPlaceInfo);
+};
 
 $(document).ready(function() {
   $("form#new-places").submit(function(event) {
@@ -58,6 +66,12 @@ $(document).ready(function() {
     var inputtedLandmark = $("input#new-landmark").val();
     var inputtedTimeOfYear = $("input#new-timeOfYear").val();
     var inputtedNotes = $("input#new-notes").val();
+    var newPlaces = new Places(inputtedLocation, inputtedLandmark, inputtedTimeOfYear, inputtedNotes);
+    travelLog.addLocation(newPlaces);
+    displayLocationDetails(travelLog);
+    
+    
+    console.log(travelLog.locations)
   });
 });
 
