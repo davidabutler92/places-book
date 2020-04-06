@@ -8,5 +8,48 @@
     <title>Document</title>
   </head>
   <body>
+    <div class="container"> 
+      <div class="jumbotron">
+        <h1>Places logbook</h1>
+      </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <form id="places">
+              <div class="form-group">
+                <!-- Below will be location input -->
+                <label for="location">Enter a location:</label>
+                <input type="text" id="location" placeholder="Enter location Here">
+              </div>
+              <!-- Below will be landmark input -->
+              <div class="form-group">
+                <label for="landmark">Enter a landmark at this location:</label>
+                <input type="text" id="landmark" placeholder="Enter landmark here">
+              </div>
+              <!-- Below will be t.o.y input -->
+              <div class="form-group">
+                <label for="TimeOfYear">Enter the time of year you visited this location:</label>
+                <input type="text" id="timeOfYear" placeholder="Enter time of year here">
+              </div>
+              <!-- Below will be notes input -->
+              <div class="form-group">
+                <label for="notes">Enter some notes about the location:</label>
+                <input type="text" id="notes" placeholder="Enter notes here">
+              <!-- Below will be submit button -->
+                <button type="subtmit" class="btn btn-info">Add place</button>
+              </div>     
+            </form>
+            
+            <div class="row">
+              <div class="col-md-6">
+                <div id="output">
+                  <!-- This will be where the "result" will appear -->
+                </div> 
+              </div>
+            </div> 
+            
+          </div>
+        </div>
+    </div>
   </body>
 </html>

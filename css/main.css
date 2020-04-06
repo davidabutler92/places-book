@@ -1,0 +1,17 @@
+.jumbotron {
+  text-align: center;
+  font-family: cursive;
+  border-style: double;
+  border-color: black;
+  -webkit-text-stroke: 1px black;
+  -webkit-text-fill-color: white;
+  color: white;
+  margin: 20px;
+  background-image: linear-gradient(to right top, #6bd179, #00c6a7, #00b5d5, #009df0, #007de8, #007ce8, #007be9, #007ae9, #0099f6, #00b4f2, #00cbe4, #14dfd2);
+}
+
+
+body {
+  background-color: lightgray;
+}
+
