@@ -6,21 +6,26 @@ function Places(location, landmarks, timeOfYear, notes) {
   this.notes = notes; 
 }
 
-Places.prototype.addPlace = function(Places) {
-  this.Places.push(place);
-}
+// Places.prototype.addPlace = function(Places) {
+//   this.Places.push(place);
+// //}
+
 
 //UI logic 
+
 $(document).ready(function() {
-  $("form#places").submit(function(event) {
+  $("form#new-places").submit(function(event) {
     event.preventDefault();
 
-    var newLocation = $("input#location").val();
-    var newLandmark = $("input#landmark").val();
-    var newTimeOfYear = $("input#timeOfYear").val();
-    var newNotes = $("input#notes").val();
-  
-
-    var Place = new Places(location, landmarks, timeOfYear, note);
+    var inputtedLocation = $("input#location").val();
+    var inputtedLandmark = $("input#landmark").val();
+    var inputtedTimeOfYear = $("input#timeOfYear").val();
+    var inputtedNotes = $("input#notes").val();
+   
+    var newPlace = new Places(inputtedLocation, inputtedLandmark, inputtedTimeOfYear, inputtedNotes);
+    console.log(newPlace);
+    $("ul#places").append("<li><span class='list-place'>" + newPlace.location + "</span><li/>");
+    
   });
 });
+//console.log(newPlace);

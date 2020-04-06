@@ -15,9 +15,12 @@
 
         <div class="row">
           <div class="col-md-6">
-            <form id="places">
+            <form id="new-places">
               <div class="form-group">
-                <!-- Below will be location input -->
+                <div class ="well">
+                  <h3>Below is log of the places you've visited, enter a location you have visited, a notable landmark, the time of year you visited and any other notes you may have about it!</h3>
+                </div>
+              <!-- Below will be location input -->
                 <label for="location">Enter a location:</label>
                 <input type="text" id="location" placeholder="Enter location Here">
               </div>
@@ -42,12 +45,21 @@
             
             <div class="row">
               <div class="col-md-6">
-                <div id="output">
-                  <!-- This will be where the "result" will appear -->
-                </div> 
+                <h2>Places:</h2>
+                  <ul id="places">
+                  </ul>
+
+                  <div id="show-places">
+                    <p>Location: <span class="location"></span></p>
+                    <p>Landmark: <span class="landmark"></span></p>
+                    <p>Time of year: <span class="timeOfYear"></span></p>
+                    <p>Notes: <span class="notes"></span></p>
+                    <div id="buttons">
+                    </div>
+                  </div>
               </div>
             </div> 
-            
+
           </div>
         </div>
     </div>
